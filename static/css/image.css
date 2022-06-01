@@ -2,7 +2,7 @@ body{
     color: #000;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
-    background-image: linear-gradient(to right, rgba(75, 71, 71, 0), rgb(235, 146, 146),rgb(237, 119, 182));
+    background-image: linear-gradient(to right, rgba(49, 43, 43, 0), rgb(152, 143, 143));
 }
 #back_content{
   background-image:url(/static/photos/travel1.jpg);
@@ -35,7 +35,7 @@ body{
   font-size: 2rem;
   text-align: center;
   background-color: pink;
-  background-image: linear-gradient(to top,rgb(230, 183, 230) 0%,rgb(134, 123, 224) 100%);
+  background-image: linear-gradient(to top,rgb(203, 181, 203) 0%,rgb(144, 144, 200) 100%);
   background-size: 100%;
 
 }
