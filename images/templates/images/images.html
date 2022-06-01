@@ -1,0 +1,35 @@
+{% extends 'images/gallery.html' %}
+{% load bootstrap4 %}
+
+{% block title %}
+<h1 align="center"> My Gallery</h1>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-6 m-5">
+            <div class="hovereffect">
+                <img class="center" src="{{image.image.url}}" alt="" style="max-height:550px;max-width:750px" >
+                    <div class="overlay">
+                        <h2>Location:{{image.image_location}}</h2>
+                        <p>
+                            {{image.image_description}}
+                        </p>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-5">
+        <div class="text-center">
+            <a class="btn btn-outline-dark btn-sm m-2" href="{% url 'home' %}" role="button">Back</a>
+        </div>
+        <div class="text-center">
+            <a href="{% url 'addPhoto' %}" class="btn btn-outline-dark btn-sm m-2">Add photo</a>
+        </div>
+    </div>
+
+{% endblock %}
+
+
