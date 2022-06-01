@@ -9,9 +9,6 @@ def home(request):
     images = Image.objects.all()
     context = {'category':category, 'locations':locations, 'images':images}
     return render(request, 'images/home.html',context)
-   
-
-
 
 def gallery(request):
     category =request.GET.get('category')
@@ -57,28 +54,20 @@ def addPhoto(request):
     return render(request, 'images/add-image.html',context)
 
 def search_category(request):
-    title = 'Search'
-    categories = Category.objects.all()
-    locations = Location.objects.all()
-    if 'image_category' in request.GET and request.GET['image_category']:
-        search_term = request.GET.get('image_category')
-        found_results = Image.search_by_category(search_term)
-        message = f"{search_term}"
-        print(search_term)
-        print(found_results)
+    if request.method == 'POST':
+        image_category = request.POST['image_category']
+        images=Image.objects.filter(image_category__category_name__icontains=image_category)
 
-        return render(request, 'images/search.html',{'title':title,'images': found_results, 'message': message, 'categories': categories, "locations":locations})
+        return render(request, 'images/search.html',{'image_category':image_category,'images':images})
     else:
-        message = 'You havent searched yet'
-        return render(request, 'images/search.html',{"message": message})
+        return render(request, 'images/search.html',{},)
 
 def search_location(request):
-    location = request.GET.get('location')
     
     if request.method == 'POST':
-        location=request.POST.get('location')
+        location_name=request.POST['location']
+        images=Image.objects.filter(image_location__location_name__icontains=location_name)
         
-    
-    return render(request, 'images/search.html',{'location':location},)
+    return render(request, 'images/search.html',{'location_name':location_name,'images':images})
     
 
