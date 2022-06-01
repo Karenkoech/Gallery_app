@@ -1,0 +1,6 @@
+gal-env/
+*.pyc
+*.pyo
+vscode/
+
+gallery_app/settings.py
