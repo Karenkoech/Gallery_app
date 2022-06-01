@@ -2,5 +2,6 @@ gal-env/
 *.pyc
 *.pyo
 vscode/
+.env
 
 gallery_app/settings.py
