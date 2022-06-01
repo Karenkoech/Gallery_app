@@ -7,7 +7,7 @@
 </head>
 <body>
   
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-sm bg-light justify-content-center">
     <a class="navbar-brand text-primary font-size:30px" href="{% url 'gallery'%}">Mon-Art</a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -16,10 +16,10 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <a class="nav-link text-center" href="{% url 'home'%}">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link text-primary" href="{% url 'home'%}">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-center" href="{% url 'search_location'%}" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Location</a>
+          <a class="nav-link dropdown-toggle text-primary" href="{% url 'search_location'%}" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Location</a>
           <div class="dropdown-menu" aria-labelledby="dropdownId">
             <a class="dropdown-item" href="{% url 'search_category' %}">Kenya</a>
             <a class="dropdown-item" href="{% url 'search_category' %}">Other</a>
@@ -29,7 +29,7 @@
       <form class="d-flex" role="search" method="POST" action="{% url 'search_category' %}">
         {% csrf_token %}
         <input class="form-control me-2" type="search" name="image_category" placeholder="Search by category" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-primary" type="submit">Search</button>
       </form>
 
     </div>
